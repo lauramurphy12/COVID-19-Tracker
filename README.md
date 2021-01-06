@@ -7,11 +7,7 @@ You can launch the app by running:
 library(shiny)
 
 # Use runGitHub
-runGitHub( "<COVID-19-Tracker>", "<lauramurphy12>")
-
-# Run a tar or zip file directly
-runUrl("https://github.com/lauramurphy12/COVID-19-Tracker/archive/master.tar.gz")
-runUrl("https://github.com/lauramurphy12/COVID-19-Tracker/archive/master.zip")
+runGitHub( "COVID-19-Tracker", "lauramurphy12", ref="main")
 
 ```
 Or you can clone this repository, followed by runApp(). 
