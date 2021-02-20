@@ -4,10 +4,10 @@ server <- function(input, output) {
     
     # render country time-series visualizations
     output$covidgraph <- renderDygraph({
-        covid19$dateRep <- as.Date(covid19$dateRep, format = "%d/%m/%Y")
+        covid19$dateRep <- as.Date(covid19$dateRep, format = "%m/%d/%Y")
         countryByDates <- covid19 %>% filter(country == input$Country) %>% filter(dateRep >= input$dates[1], dateRep <= input$dates[2])
-        filtered_cases <- countryByDates %>% select(cases_weekly)
-        filtered_deaths <- countryByDates %>% select(deaths_weekly)
+        filtered_cases <- countryByDates %>% select(cases)
+        filtered_deaths <- countryByDates %>% select(deaths)
         cases <- xts(filtered_cases, order.by=countryByDates$dateRep)
         deaths <- xts(filtered_deaths, order.by=countryByDates$dateRep)
         covid19Tracker <- cbind(cases, deaths)
