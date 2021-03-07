@@ -22,10 +22,10 @@ library(ggraph)
 library(sf)
 
 # read in data sets
-covid19 <- covid19 <- read.csv("~/COVID19Tracker/COVID-19-Tracker/datasets/covid19.csv", na.strings = "", fileEncoding = "UTF-8-BOM")
+covid19 <- covid19 <- read.csv("~/COVID-19-Tracker/datasets/covid19.csv", na.strings = "", fileEncoding = "UTF-8-BOM")
 covid19<-plyr::rename(covid19, replace=c(countriesAndTerritories="country", continentExp="continent"))
-countries <- geojsonio::geojson_read("~/COVID19Tracker/COVID-19-Tracker/datasets/countries.geojson", what = "sp")
-covid_news <- read.csv("~/COVID19Tracker/COVID-19-Tracker/datasets/covid19_news.csv")
+countries <- geojsonio::geojson_read("~/COVID-19-Tracker/datasets/countries.geojson", what = "sp")
+covid_news <- read.csv("~/COVID-19-Tracker/datasets/covid19_news.csv")
 
 
 #Convert country and continent to factors
